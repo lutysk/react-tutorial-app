@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+// creating element with createElement
+const helloReactEl = React.createElement('h1', {className: 'main-title'}, 'Hello React!')
+// creating functional component
+const SubTitleComponent = () => <h2>This is a demo application</h2>;
+// creating component with React.Component
+class Description extends React.Component {
+  render() {
+    return (
+      <p>In this app we're displaying React components created with different techniques.</p>
+    )
+  }
+}
+// creating component with React.PureComponent
+class Final extends React.PureComponent {
+  render() {
+    return (
+      <h3>Thank you for attention, that's it!</h3>
+    )
+  }
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      {helloReactEl}
+      <SubTitleComponent />
+      <Description />
+      <Final />
     </div>
   );
 }
